@@ -178,11 +178,107 @@ a{
 	margin-left: 100px;
 }
 
+.send-form-btn{
+	max-width: 430px;
+	width: 100%;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #DF020B;
+	font-size: 20px;
+	font-weight: 900;
+	border-radius: 8px;
+	transition: .3s;
+	/* position: absolute; */
+	position: relative;
+}
+/* btn hover effect */
+.send-form-btn::after,
+.send-form-btn::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    transition: .5s;
+}
 
+.send-form-btn::after {
+    top: -15px;
+    left: -15px;
+    border-top: 3px solid transparent;
+    border-left: 3px solid transparent;
+}
+
+.send-form-btn::before {
+    bottom: -15px;
+    right: -15px;
+    border-bottom: 3px solid transparent;
+    border-right: 3px solid transparent;
+}
+
+.send-form-btn:hover {
+    color: #fafafa;
+	opacity: .87;
+}
+
+.send-form-btn:hover::after,
+.send-form-btn:hover::before {
+    width: 50px;
+    height: 50px;
+    border-color: red;
+}
+/* btn hover effect */
+.send-form-btn-modificate{
+	position: relative;
+	left: 7vw;
+}
+
+
+/* form-wrapper */
+.form-wrapper .logo{
+	padding-top: 50px;
+	display: block;
+	width: 100%;
+}
+.form-wrapper{
+	width: 100%;
+}
+
+.form-flex{
+	padding: 130px 0;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+/* .form-info{
+	width: ;
+} */
+.form-info h1{
+	font-size: 90px;
+	font-weight: bold;
+	display: flex;
+}
+
+/* .form-flex form */
+.form-flex form{
+	display: flex;
+	flex-direction: column;
+}
 /* media styles adaptive */
 
 /* 800px  */
 @media(max-width:800px){
+	.send-form-btn-modificate{
+		left: 0;
+		bottom: 100px;
+	}
+	.send-form-btn{
+		
+		width: calc(100% - 40px);
+	}
 	/* hero-section */
 	.hero-section{
 		display: flex;
@@ -197,6 +293,7 @@ a{
 		left: 0;
 	}
 	/* .main-header */
+	
 	/* main-title */
 	.main-title{
 		position: relative;
@@ -229,6 +326,13 @@ a{
 	.footer-bottom-link li:last-child{
 		margin-left: auto;
 	} */
+	.main-title{
+		position: relative;
+		top: 40%;
+		width:min-content;
+		text-align: center;
+		font-size: calc(var(--index) * 5);
+	}
 }
 /* 400px */
 @media(max-width:400px){
@@ -239,13 +343,7 @@ a{
 		height: 70vh;
 	} 
 	/* main title  */
-	.main-title{
-		position: relative;
-		top: 40%;
-		width:min-content;
-		text-align: center;
-		font-size: calc(var(--index) * 5);
-	}
+	
 	.footer-bottom-link li:last-child{
 		margin-left: 50px !important;
 	} 
