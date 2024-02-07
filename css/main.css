@@ -80,12 +80,17 @@ body {
 .gallery__left {
 	margin-top: calc(var(--gallery-gap) * 1.75);
 }
+
 .gallery__left .hover-effect{
 	margin-top: 60px;
+}
+.gallery__left .hover-effect:first-child{
+	margin-top: 0;
 }
 .gallery__right .hover-effect {
 	margin: 0;
 	margin-top: var(--gallery-gap);
+	margin-bottom: 40px;
 }
 .text-block {
 	color: var(--color-text);
@@ -246,12 +251,14 @@ a{
 	height: fit-content;
 	position: relative;
 	cursor: pointer;
+	overflow: hidden;
 }
 .hover-effect img{
 }
 .hover-effect:hover .hover-effect-text{
 	transition: .5s;
 	opacity: 1;
+	display: flex;
 }
 .hover-effect:hover img{
 	border-radius: 50%;
@@ -265,13 +272,14 @@ a{
 	width: 100%;
 	height: 100%;
 	text-align: center;
-	display: flex;
+	/* display: flex; */
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	background-color: rgb(0,0,0,.7);
 	opacity: 0;
 	backdrop-filter: blur(2px);
+	display: none;
 	
 }
 .hover-effect-text::before{
@@ -284,7 +292,7 @@ a{
 	width: 100%;
 	height: 100%;
 	animation: rot infinite 5s linear;
-	border: 3px dashed #fafafa;
+	border: 2px dashed #fafafa;
 	transform-origin: center;
 	border-radius: 50%;
 }
@@ -309,10 +317,12 @@ a{
 /* form-wrapper */
 .form-wrapper .logo{
 	padding-top: 50px;
-	display: block;
+	display: flex;
 	width: 100%;
 	font-weight: 900;
 	letter-spacing: .5px;
+	align-items: center;
+	justify-content: space-between;
 }
 .form-wrapper{
 	width: 100%;
@@ -407,6 +417,49 @@ a{
 	color: #191919;
 }
 
+.back{
+	display: flex;
+	align-items: center;
+	font-size: 15px;
+	color: rgb(255,255,255,.6);
+	column-gap: 10px;
+}
+.back span{
+	transform: translateX(-40px);
+	transition: .3s;
+	opacity: 0;
+}
+.back:hover span{
+	transition: .3s;
+	transform: translateX(0);
+	opacity: 1;
+}
+.back svg{
+	fill: #fafafa;
+}
+
+
+/* loader styles */
+.preloader{
+	color: #45d6b5;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 1000;
+	background: #1c1b2a;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: .5s;
+  }
+  
+  svg{
+	width: 200px;
+  }
+  
+
 /* media styles adaptive */
 /* 1024px */
 @media(max-width:1024px){
@@ -470,6 +523,9 @@ a{
 		flex-direction: column;
 	}
 	/* .gallery__item */
+	.hover-effect{
+		max-width: 100%;
+	}
 	.gallery__item{
 		max-width: 100%;
 		max-height: fit-content;
@@ -537,6 +593,15 @@ a{
 		background-repeat: no-repeat,no-repeat;
 		background-size: 100px,250px;
 		background-position: 80% 10%, 10% 100%;
+	}
+
+	/* .hover-effect-text h4{
+		font-size: 18px;
+	} */
+	.hover-effect-text p{
+		font-size: 14px;
+		max-width: 260px;
+		width: 100%;
 	}
 }
 /* 400px */

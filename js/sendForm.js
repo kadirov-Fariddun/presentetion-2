@@ -38,4 +38,15 @@ sendOrderForm.onsubmit = async (e) => {
 	   setTimeout(() => {
 		location.reload();
 	   }, 1500);
- }
+ };
+
+ //loader script 
+document.querySelector('body').onload = () => {
+	setTimeout(() => {
+		document.querySelector('.preloader').style.opacity = 0; 
+		setTimeout(() => {
+			document.querySelector('.preloader').style.display = 'none'; 
+		}, 500);
+		
+	}, 1500);
+}

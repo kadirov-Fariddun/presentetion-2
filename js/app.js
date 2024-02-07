@@ -56,4 +56,13 @@ var typed = new Typed('#typed', {
 	backSpeed:80,
 	loop:true
   });
-
+//loader script 
+document.querySelector('body').onload = () => {
+	setTimeout(() => {
+		document.querySelector('.preloader').style.opacity = 0; 
+		setTimeout(() => {
+			document.querySelector('.preloader').style.display = 'none'; 
+		}, 500);
+		
+	}, 1500);
+}
