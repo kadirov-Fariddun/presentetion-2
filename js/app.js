@@ -56,3 +56,4 @@ var typed = new Typed('#typed', {
 	backSpeed:80,
 	loop:true
   });
+

@@ -385,6 +385,7 @@ a{
 	color: #1C1C1C;
 	resize: none;
 }
+
 .form-flex form button{
 	max-width: 585px;
 	width: 100%;
@@ -395,6 +396,15 @@ a{
 	outline: none;
 	font-size: 16px;
 	color: #fafafa;
+	cursor: pointer;
+	transition: .3s;
+	font-weight: 700;
+}
+.form-flex form button:hover{
+	transition: .3s;
+	transform: translateY(-3px);
+	background-color: #fafafa;
+	color: #191919;
 }
 
 /* media styles adaptive */
