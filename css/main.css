@@ -240,9 +240,15 @@ a{
 	padding-top: 50px;
 	display: block;
 	width: 100%;
+	font-weight: 900;
+	letter-spacing: .5px;
 }
 .form-wrapper{
 	width: 100%;
+	background-image: url('../images/form-bg-line.png'),url('../images/form-bg-doted.png');
+	background-repeat: no-repeat,no-repeat;
+	background-size: 200px,400px;
+	background-position: 80% 10%, 50% 100%;
 }
 
 .form-flex{
@@ -394,6 +400,11 @@ a{
 }
 /* 700px  */
 @media(max-width:700px){
+	.form-wrapper{
+		background-repeat: no-repeat,no-repeat;
+		background-size: 150px,250px;
+		background-position: 80% 10%, 10% 100%;
+	}
 	
 	.form-flex{
 		flex-direction: column;
@@ -440,6 +451,11 @@ a{
 		width:min-content;
 		text-align: center;
 		font-size: calc(var(--index) * 5);
+	}
+	.form-wrapper{
+		background-repeat: no-repeat,no-repeat;
+		background-size: 100px,250px;
+		background-position: 80% 10%, 10% 100%;
 	}
 }
 /* 400px */
