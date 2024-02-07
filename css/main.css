@@ -70,14 +70,20 @@ body {
 }
 .gallery__item {
 	max-width: calc(var(--index) * 21);
-	margin-bottom: var(--gallery-gap);
+	
 	max-height: 180vh;
 	border-radius: 8px;
+}
+.hover-effect{
+	margin-bottom: var(--gallery-gap);
 }
 .gallery__left {
 	margin-top: calc(var(--gallery-gap) * 1.75);
 }
-.gallery__right .gallery__item {
+.gallery__left .hover-effect{
+	margin-top: 60px;
+}
+.gallery__right .hover-effect {
 	margin: 0;
 	margin-top: var(--gallery-gap);
 }
@@ -234,7 +240,72 @@ a{
 	left: 7vw;
 }
 
-
+/* hover-effect images */
+.hover-effect{
+	max-width: calc(var(--index) * 21);
+	height: fit-content;
+	position: relative;
+	cursor: pointer;
+}
+.hover-effect img{
+}
+.hover-effect:hover .hover-effect-text{
+	transition: .5s;
+	opacity: 1;
+}
+.hover-effect:hover img{
+	border-radius: 50%;
+	transition: .5s;
+}
+.hover-effect-text{
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(0,0,0,.7);
+	opacity: 0;
+	backdrop-filter: blur(2px);
+	
+}
+.hover-effect-text::before{
+	content: "";
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	animation: rot infinite 5s linear;
+	border: 3px dashed #fafafa;
+	transform-origin: center;
+	border-radius: 50%;
+}
+@keyframes rot{
+	100%{
+		transform: rotate(360deg);
+	}
+}
+.hover-effect-text h4{
+	font-weight: 700;
+	font-size: 18px;
+	letter-spacing: .5px;
+	margin-bottom: 20px;
+}
+.hover-effect-text p{
+	font-size: 16px;
+	line-height: 27px;
+}
+.hover-effect-text h4,p{
+	max-width: 300px;
+}
 /* form-wrapper */
 .form-wrapper .logo{
 	padding-top: 50px;
