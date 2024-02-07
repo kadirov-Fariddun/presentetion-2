@@ -252,6 +252,7 @@ a{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	column-gap: 50px;
 }
 /* .form-info{
 	width: ;
@@ -260,14 +261,90 @@ a{
 	font-size: 90px;
 	font-weight: bold;
 	display: flex;
+	flex-direction: column;
+	margin-bottom: 50px;
 }
-
+.form-text{
+	max-width: 580px;
+	width: 100%;
+	font-size: 16px;
+	opacity: .8;
+	line-height: 28px;
+}
 /* .form-flex form */
 .form-flex form{
 	display: flex;
 	flex-direction: column;
+	row-gap: 20px;
+	width: 50%;
 }
+.form-flex form input::placeholder,
+.form-flex form textarea::placeholder{
+	color: #1E1D1D;
+	font-size: 16px;
+}
+.form-flex form input{
+	max-width: 585px;
+	width: 100%;
+	height: 60px;
+	border-radius: 8px;
+	border: none;
+	background-color: #D9D9D9;
+	padding: 16px 20px;
+	outline: none;
+	font-size: 16px;
+	color: #1C1C1C;
+}
+.form-flex form textarea{
+	max-width: 585px;
+	width: 100%;
+	height: 120px;
+	border-radius: 8px;
+	border: none;
+	background-color: #D9D9D9;
+	padding: 16px 20px;
+	outline: none;
+	font-size: 16px;
+	color: #1C1C1C;
+	resize: none;
+}
+.form-flex form button{
+	max-width: 585px;
+	width: 100%;
+	height: 60px;
+	border: none;
+	background-color: #DF020B;
+	padding: 16px 20px;
+	outline: none;
+	font-size: 16px;
+	color: #fafafa;
+}
+
 /* media styles adaptive */
+/* 1024px */
+@media(max-width:1024px){
+	.form-info h1{
+		font-size: 70px;
+	}
+}
+/* 900px */
+@media(max-width:900px){
+	.form-info h1{
+		font-size: 60px;
+	}
+	.form-info{
+		max-width: 50%;
+	}
+	.form-flex form input{
+		height: 50px;
+	}
+	.form-flex form textarea{
+		height: 100px;
+	}
+	.form-flex form button{
+		height: 50px;
+	}
+}
 
 /* 800px  */
 @media(max-width:800px){
@@ -309,6 +386,37 @@ a{
 	.gallery__item{
 		max-width: 100%;
 		max-height: fit-content;
+	}
+	.form-info h1{
+		font-size: 45px;
+	}
+	
+}
+/* 700px  */
+@media(max-width:700px){
+	
+	.form-flex{
+		flex-direction: column;
+		column-gap: 0;
+		row-gap: 40px;
+		padding: 80px 0;
+	}
+	.form-info{
+		max-width: 100%;
+	}
+	.form-flex form {
+		max-width: 100%;
+		width: 100%;
+	}
+	.form-flex form input{
+		height: 40px;
+	}
+	.form-flex form textarea{
+		height: 80px;
+	}
+	.form-flex form button{
+		height: 40px;
+		padding: 0;
 	}
 	
 }
