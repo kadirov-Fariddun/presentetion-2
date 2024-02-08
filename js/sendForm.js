@@ -44,7 +44,7 @@ sendOrderForm.onsubmit = async (e) => {
 		`;
 		setTimeout(() => {
 			location.reload();
-			location.href = '/'
+			location.href = '/index.html';
 		   }, 1500);
 	   }, 3000);
 	  
