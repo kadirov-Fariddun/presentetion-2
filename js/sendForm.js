@@ -29,15 +29,26 @@ sendOrderForm.onsubmit = async (e) => {
 		   parse_mode:'html',
 		   text:message,
 	   });
-	   e.target.parentNode.innerHTML = `
-	   <div class='succes-send-message' style="font-size:16px; display:flex;align-items:center; column-gap:10px;">
-		   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: green;transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1.999 14.413-3.713-3.705L7.7 11.292l2.299 2.295 5.294-5.294 1.414 1.414-6.706 6.706z"></path></svg>
-		   <span>Заявка успешно отправлено</span>
-	   </div>
-	   `;
+	   e.target.innerHTML = `
+	   <div class="send-loader-animation">
+	   <h2>Отправка...</h2>
+	      <div class="kinetic"></div>
+       </div>`;
 	   setTimeout(() => {
-		location.reload();
-	   }, 1500);
+		e.target.innerHTML = `
+		<div class='succes-send-message' style="font-size:16px; display:flex;align-items:center;justify-content:center;
+		width:100%;height:500px; column-gap:10px;">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: green;transform: ;msFilter:;"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-1.999 14.413-3.713-3.705L7.7 11.292l2.299 2.295 5.294-5.294 1.414 1.414-6.706 6.706z"></path></svg>
+			<span>Заявка успешно отправлено</span>
+		</div>
+		`;
+		setTimeout(() => {
+			location.reload();
+			location.href = '/'
+		   }, 1500);
+	   }, 3000);
+	  
+	  
  };
 
  //loader script 
